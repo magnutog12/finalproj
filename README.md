@@ -1,3 +1,10 @@
+# Work-in-progress timesheet - Tony - HOURS - DATE - DESC
+Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4
+
+# Work-in-progress timesheet - Magnus - HOURS - DATE - DESC
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
