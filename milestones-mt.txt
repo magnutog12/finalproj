@@ -1,0 +1,4 @@
+Magnus Terry
+3 hours 3/19/2025 learning react use states and react-bootstrap,
+5 hours 3/10/2025 - 3/19/2025 working on webscraper to get data to json, 
+6 hours 3/19/2025 - 3/20/2025 on UI of site + search bar functionality.
