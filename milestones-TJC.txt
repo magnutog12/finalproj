@@ -1,0 +1,259 @@
+
+Work Done:
+Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4
+Tony - 2 hours 03/24/2025 - Began random number generator in Js
+==========================================================================
+RUBRIC:
+Begin to learn the javascript, HTML, and CSS langauges          - 5 points
+Implement the Google Maps API within REACT                      - 20 points
+Implement a pin system for the Google maps                      - 5 points
+Assign pins to location of nearby offenders based upon location - 10 points
+===========================================================================
+                                                          Total - 40 points
+===========================================================================
+WORK DONE FOR LEARNING JS, HTML, CSS
+----------------------------------------------------------------------------
+// THIS IS THE FIRST
+
+/*console.log(`Hello`); // this is the command to output to the console
+console.log(`I like 0!`);
+
+window.alert(`This is an alert!`); // How to push an alert to the user.
+window.alert(`I like 0!`);
+
+document.getElementById("1sth1").textContent = "Hello"; // This outputs my header via the id to the website
+document.getElementById("1stp1").textContent = "This is my first paragraph"; // This does the same for the paragraph!
+
+*/
+
+// Javascript tutorial - Variables-----------------------------------------------------------------------------------------------------------------------
+
+// let x; is declaration 
+// x = 123; is assignment
+
+/*let x = 123; // both declaration and assignment
+let age = 25;
+let price = 10.99;
+let gpa = 2.1
+
+let first_name = "Tony";
+let fav_food = "indian";
+let email = "your_mother@gmail.com";
+
+
+console.log(`Your first name is ${first_name} and your favorite food is ${fav_food} and your email is ${email}`)
+console.log(typeof first_name) // how to output the data type
+console.log(`You are ${age} years old`); // using backticks, you can use the formula ${variable} to place the variable within the backticks
+console.log(`The price is $${price}`);
+console.log(`Your GPA is: ${gpa}`);
+
+--Booleans--
+
+let online = true;
+let for_sale = false;
+let is_student = true;
+console.log(`Tony is online: ${online}`);
+console.log(`Is the car for sale? ${for_sale}`);
+console.log(`Is Tony in school? ${is_student}`);
+
+
+
+let fullName = "Tony C";
+let age = 29;
+let is_student = true;
+
+document.getElementById("p1").textContent = `Your name is ${fullName}`;
+document.getElementById("p2").textContent = `You are ${age} years old`;
+document.getElementById("p3").textContent = `Are you a student? ${is_student}`;
+
+//arithmetic operators ------------------------------------------------------------------------------------------------------------------------
+let students = 30;
+//students += 1; // Works just like in c++;
+//students = students ** 2; // exponent operator!!!! **
+let extra_students = students % 2; // modulo operator
+// incremement and decrememnt -- students++; students--;
+ 
+**********************HOW TO ACCEPT USER INPUT**************************************************************************************************
+*/
+// Can be done two ways!
+// 1 - EASY - Create window prompt
+// 2 - PROFESSIONAL - HTML textbox
+
+// 1 - let username = window.prompt("What is your username?");
+// 2 - <body>  
+// <h1>Welcome</h1>
+//   <label>username: </label>
+//   <input id="myText"><br><br>
+//   <button id="mySubmit">submit</button>
+//   <script src="index.js"></script>
+// 1. console.log(username);
+//2. 
+/*let username;
+    document.getElementById("mySubmit").onclick = function(){
+// everything we want to do on click will be in these curly braces
+    username = document.getElementById("myText").value;     // records the username submitted to the text box.
+    document.getElementById("myH1").textContent = `Hello ${username}`;              // changes the header h1 to what the user places as their username in the textbox.
+
+    // html code for 2. 
+     <h1 id="myH1">Welcome</h1>
+
+    <label>username: </label>
+    <input id="myText"><br><br>
+    <button id="mySubmit">submit</button>
+    <script src="index.js"></script>
+}
+*/
+/* type conversions------------------------------------------------------------------------------------------------------------------------
+*
+*
+*
+*
+
+let age = window.prompt("How old are you?"); // will record as a string, bc of window prompt
+//age = Number(age) // turns data type into an int
+age += 1;
+console.log(age, typeof age);
+
+let x = "0";
+let y = "0";
+let z = "0";
+x = Number(x);
+y = String(y);
+z = Boolean(z);
+console.log(x, typeof x);
+
+console.log(y, typeof y);
+
+console.log(z, typeof z);
+
+// shows the nature of data type conversion, strings return true, empty strings return false if bool, to number will return NaN, not a number
+*/
+
+// const PI = 3.14159; // making var uppercase is for primitive data types - bools and ints
+// let radius;
+// let circumference;
+// document.getElementById("mySubmit").onclick = function(){
+//     radius = document.getElementById("myText").value;
+//     radius = Number(radius);
+//     circumference = 2 * PI * radius;
+//     document.getElementById("myH3").textContent = circumference + "cm"; // created an h3 header in order to print the radius to the webpage beneath the radius textbox created with a string concatenated onto the circum
+//     // editing const PI will NOT OUTPUT anything as the console has found an error in the code
+//}
+
+// html for the code above ---
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>My Website</title>
+//     <link rel="stylesheet" href="style.css">
+// </head>
+// <body>
+//   <h1 id="myH1">Enter the radius of a circle:</h1>
+//   <label>radius:</label>  
+//   <input type="text" id="myText">
+//     <button id="mySubmit">submit</button><br><br>
+// <h3 id="myH3"></h3>
+
+//     <script src="index.js"></script>
+// </body>
+// </html>
+
+/*------------------------------------------------------------------actual project counter program ------------------------------------------------------------------------------------------------------------------------
+*/
+
+//------------------------------------------------------------------javascript file------------------------------------------------------------------------------------------------------------------------
+    const dec_btn = document.getElementById("decreaseButton");
+    const reset_btn = document.getElementById("resetButton");
+    const inc_btn = document.getElementById("increaseButton");
+
+    const countLabel = document.getElementById("countLabel");
+    let count = 0;
+
+    inc_btn.onclick = function(){
+        count++;
+        countLabel.textContent = count;
+    }
+    dec_btn.onclick = function(){
+        count--;
+        countLabel.textContent = count;
+    }
+    reset_btn.onclick = function(){
+        count = 0;
+        countLabel.textContent = count;
+    }
+
+/*------------------------------------------------------------------hmtl file ------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter-Program</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label id="countLabel">0</label><br>
+    <div id="btnContainer"> <!--used for structuring data into a type of "container" can be used to edit specific blocks of code with CSS-->  
+        <button id="decreaseButton" class ="buttons">decrease</button>
+        <button id="resetButton" class ="buttons">reset</button>
+        <button id="increaseButton" class ="buttons">increase</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+ *------------------------------------------------------------------ css file ------------------------------------------------------------------------------------------------------------------------
+ * #countLabel{
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: 'Times New Roman', Times, serif;
+}
+#btnContainer{
+    text-align: center;
+}
+.buttons{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(233, 129, 210);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+.buttons:hover{
+    background-color: rgb(184, 66, 158);
+}
+
+*/
+
+
+/*------------------------------------------------------------------ Math Objects ------------------------------------------------------------------------------------------------------------------------
+*/
+//Math  = built in obnject that provides a collection of properties and methods
+// console.log(Math.PI);
+// console.log(Math.E);
+
+// let x = 3.99
+// let y = 2;
+// let z;
+// //z = Math.round(x);
+// //z = Math.floor(x)
+// //z = Math.ceil(x);
+// //z = Math.trunc(x);
+// //z = Math.pow(x,y);
+// //z = Math.swrt(y);
+// //z = Math.log(x)
+// //max = Math.max(x, y, z);
+// console.log(max);
+
+/*------------------------------------------------------------------random number generator ------------------------------------------------------------------------------------------------------------------------ 
+const min = 50;
+const max = 100;
+const gen_btn = document.getElementById("generate").
+random_num = Math.floor(Math.random() * (max-min)) + min;
+
+document.getElementById("randomNum").textContent = random_num;
+*/
