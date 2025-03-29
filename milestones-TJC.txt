@@ -2,6 +2,7 @@
 Work Done:
 Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4
 Tony - 2 hours 03/24/2025 - Began random number generator in Js
+Tony - 2 hours 03/29/2025 - Learning REACT by watching video - https://youtu.be/CgkZ7MvWUAA?si=lG6ZwQyJZAxh3pov
 ==============================================================================================================================================
 REPORT: I believe that the rubric went well overall. I feel like learning the language may be worth more points, 
 but implementing the and writing the code is more important than reading the javascript reference manual. 
