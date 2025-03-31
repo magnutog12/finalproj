@@ -1,4 +1,22 @@
-Magnus Terry
-3 hours 3/19/2025 learning react use states and react-bootstrap,
-5 hours 3/10/2025 - 3/19/2025 working on webscraper to get data to json, 
-6 hours 3/19/2025 - 3/20/2025 on UI of site + search bar functionality.
+
+Work Done:
+Magnus - 3 hours 3/19/2025 learning react use states and react-bootstrap,
+Magnus - 12 hours 3/10/2025 - 3/30/2025 working on webscraper to get data to json, 
+Magnus - 6 hours 3/19/2025 - 3/20/2025 on UI of site + search bar functionality.
+==============================================================================================================================================
+REPORT: This has gone very well so far and I feel as though we planned a good app structure before starting and it has made the process much 
+more manageable. The webscraper portion of this has been much more challenging than I expected and I think more work will need to go into it 
+to get all the desired data but it is working properly now. A good chunk of time has been spent learning react usestates and implementing them
+with my searching functionality and modal pop-ups. Working with my teammate Tony has been fun because it is really helpful to brainstorm the 
+project with someone who has differing view points and it has helped the project come together.
+==============================================================================================================================================
+RUBRIC:
+Learn react, bootstrap, and puppeteer                                         - 5 points
+Implement a puppeteer webscraper to get data to a json file                   - 20 points
+Use json data in a react project and work on UI and search bar functionality  - 15 points
+==============================================================================================================================================
+                                                          Total - 50 points
+==============================================================================================================================================
+Work Done: https://github.com/magnutog12/finalproj
+- App.js
+- navBar.js
