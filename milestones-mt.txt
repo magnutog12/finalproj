@@ -15,7 +15,7 @@ Learn react, bootstrap, and puppeteer                                         - 
 Implement a puppeteer webscraper to get data to a json file                   - 20 points
 Use json data in a react project and work on UI and search bar functionality  - 15 points
 ==============================================================================================================================================
-                                                          Total - 50 points
+                                                          Total - 40 points
 ==============================================================================================================================================
 Work Done: https://github.com/magnutog12/finalproj
 - App.js
