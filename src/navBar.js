@@ -74,16 +74,11 @@ function NavBar() {
     <ul>
       
       {results.map((item) => (
-        
         <li className="gap-2" key={item.name}>
-          
           {/*handles modal popups*/}
           <Button className="m-1" variant="outline-dark" size='sm' onClick={() => handleShow(item)}>
-            
           {item.name}</Button>
-
         </li>
-        
       ))}
       
     </ul>
@@ -92,6 +87,8 @@ function NavBar() {
 
     {/*this prevents an error saying selectedPerson is null*/}
     {/*modal popup when clicked on offenders name in search*/}
+
+
     {selectedPerson && (
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -100,8 +97,10 @@ function NavBar() {
 
         <Modal.Body>  
           <div key={selectedPerson.name}>
-            <h1>{selectedPerson.address}</h1>
+            <h1>{selectedPerson.address}, {selectedPerson.locality} TN</h1>
             <img src={selectedPerson.img} alt="offender" width={200} height = {200}></img>
+            <p></p>
+            <Button size='sm' variant='outline-dark' href={`https://www.truthfinder.com/search/?firstName=${selectedPerson.name.split(' ')[1]}&lastName=${selectedPerson.name.split(' ')[2]}&state=TN&traffic%5Bsource%5D=GOOGSRCH&_gl=1*1cx8y1u*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw47i_BhBTEiwAaJfPpvHnkO14PUegPvUu38lVsr70KfbJAv85JQUJCajUJ5hQtO9a_KGa4BoCAsEQAvD_BwE`}>View Criminal Records</Button>
           </div>
         </Modal.Body>
 

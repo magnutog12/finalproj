@@ -16,7 +16,7 @@ function App() {
         {data.map(data => (
           <div className="boink">
             <a href={data.img}>
-            <img src = {data.img} alt='offender' width={130} height={130}></img>
+            <img src = {data.img} alt='offender' className="leftside-image"></img>
             </a>
             <p className="frontpage-name">{data.name}</p>
             <p>{data.address}</p>

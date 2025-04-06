@@ -26,9 +26,16 @@
   flex: 0 0 auto; 
   overflow-y: auto;
   height: 100%;
-  width: 15%; 
+  width: 16%; 
    
 }
+
+.leftside-image {
+  max-width: 130px;
+  max-height: 130px;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .leftside {
     width: 35%; 
