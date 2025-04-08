@@ -1,5 +1,5 @@
 # Work-in-progress timesheet - Tony - HOURS - DATE - DESC
-Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4
+Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4 - 8 hours 4/08/2025 - Debugging Maps.jx, npm install deprecations, and node.js conflictions, Map functionality and geolocation request functional.
 
 # Work-in-progress timesheet - Magnus - HOURS - DATE - DESC
 Magnus - 3 hours  3/19/2025 learning react use states and react-bootstrap, 5 hours 3/10/2025 - 3/19/2025 working on webscraper to get data to json, 6 hours 3/19/2025 - 3/20/2025 on UI of site + search bar functionality. 
