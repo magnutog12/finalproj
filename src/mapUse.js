@@ -3,16 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { Marker, Map, InfoWindow, APIProvider, useMapsLibrary, useMap } from '@vis.gl/react-google-maps';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Data from './data.json';
+import coords from './coords.json';
 
 export default function MapAccess() {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [mPosition, setMPosition] = useState(null);
   const [selectedM, setSelectedM] = useState(null);
 
-  const [geocodingService, setgeocodingService] = useState(null);
-  const [offenderMarker, setOffenderMarker] = useState([]);
+  //const [geocodingService, setgeocodingService] = useState(null);
+  //const [offenderMarker, setOffenderMarker] = useState([]);
 
+  /* || COMMENETED THIS OUT BC IT ONLY NEEDED TO RUN ONCE TO REDUCE WAITTIME FOR MARKERS!!! ||
   // geocoding addresses!!! ref: https://www.youtube.com/watch?v=cOSw0Vmi3uQ and https://stackoverflow.com/questions/15108316/google-typeerror-google-maps-geocoder-is-not-a-constructor
   useEffect(() => {
     // found this .then statement on stack overflow that fixed an issue 
@@ -48,13 +49,14 @@ export default function MapAccess() {
         }
       }
       setOffenderMarker(results);
+      console.log("Processed results:", JSON.stringify(results, null, 2));
     };
     geocodeAddress();
   
      //dependencies array
   }, [geocodingService]);
 
-
+  */
 
 
   const mapOptions = {
@@ -68,7 +70,8 @@ export default function MapAccess() {
     const requestLocation = () => {
       if (navigator.geolocation) { // LOOK INTO NAVIGATOR GEOPOSITION
         
-        navigator.geolocation.getCurrentPosition(
+        // changed to watchPosition beacuse its allegedly more accurate
+        navigator.geolocation.watchPosition(
           (position) => {
             const location = {
               lat: position.coords.latitude,
@@ -127,6 +130,7 @@ export default function MapAccess() {
       console.error("Unable to extract coordinates from event:", event);
     }
   };*/
+
   // location if geolocation fails or the current location.
   const defaultCenter = currentLocation || { lat: 35.9653, lng: -83.9233 };
 
@@ -158,8 +162,8 @@ export default function MapAccess() {
             onClick={() => setSelectedM(mPosition)}
             />
           )}
-          {
-            offenderMarker.map((offender, index) => (
+          {window.google && window.google.maps && window.google.maps.SymbolPath && (
+            coords.map((offender, index) => (
               <Marker key={index}
               position={{lat: offender.lat, lng: offender.lng}}
               icon={{path: window.google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
@@ -170,9 +174,9 @@ export default function MapAccess() {
                 strokeColor: 'black',}}
                 onClick={() => handleShow(offender)}
               />
-    
+              
             ))
-          
+          )
           }
         </Map>
 

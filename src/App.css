@@ -83,3 +83,39 @@
     transform: rotate(360deg);
   }
 }
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.sign-in-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecebeb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  color: rgb(0, 0, 0);
+}
+.sign-in-header {
+  font-size: 24px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+
+}
+.verification-code-container {
+  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  
+}
