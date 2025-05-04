@@ -143,10 +143,16 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
+    <div>
+      {!isLoggedIn ? ( <SignIn setIsLoggedIn={setIsLoggedIn}/>) : (
     <Router>
+      
+        
       <NavBar />
+      
       <Routes>
         <Route path="/track" element={<TrackUser />} />
+         
         <Route
           path="*"
           element={
@@ -175,9 +181,16 @@ function App() {
             </>
           }
         />
+        
       </Routes>
+      
+      
     </Router>
+    
+    )}
+    </div>
   );
+
 }
 const root = createRoot(document.getElementById('root'));
 root.render(<App />);
