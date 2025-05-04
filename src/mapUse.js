@@ -3,12 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { Marker, Map, InfoWindow, APIProvider, useMapsLibrary, useMap } from '@vis.gl/react-google-maps';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import coords from './coords.json';
+import coords from './Pages/coords.json';
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
+import firebase from 'firebase/compat/app';
+
 
 export default function MapAccess() {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [mPosition, setMPosition] = useState(null);
   const [selectedM, setSelectedM] = useState(null);
+  
 
   //const [geocodingService, setgeocodingService] = useState(null);
   //const [offenderMarker, setOffenderMarker] = useState([]);
@@ -77,6 +82,15 @@ export default function MapAccess() {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             };
+            // Save location to Firestore
+            const user = firebase.auth().currentUser;
+            if(!user) return;
+            firebase.firestore().collection('locations').doc(user.phoneNumber).set({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            });
+
             console.log("User location retrieved:", location);
             setCurrentLocation(location);
             setMPosition(location);

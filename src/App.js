@@ -13,9 +13,14 @@ import MapAccess from "./mapUse";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
+import TrackUser from "./Pages/trackUser";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
-//import {APIProvider, Map} from '@vis.gl/react-google-maps';
 
 if (!firebase.apps.length) {
 firebase.initializeApp({
@@ -34,9 +39,28 @@ function SignIn({ setIsLoggedIn }) {
   const [code, setCode] = useState('');
   const [confirmationResult, setconfirmationResult] = useState(null);
 
+  // stores value of whether recaptcha has been initialized
+  // dosent cause rendering 
   const recaptchaInitialized = useRef(false);
 
+  // make sure user stays logged in on refresh
   useEffect(() => {
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log('User is signed in:', user);
+        setIsLoggedIn(true);
+      } else {
+        console.log('No user is signed in');
+      }
+    }
+    );
+    return () => unsubscribe();
+  }, [setIsLoggedIn]);
+
+  // initialize recaptcha only once
+  useEffect(() => {
+    // check if recaptcha has been initialized
+    // if not initialize it
     if (!recaptchaInitialized.current) {
       recaptchaInitialized.current = true;
         window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
@@ -57,7 +81,6 @@ function SignIn({ setIsLoggedIn }) {
 
     firebase.auth().signInWithPhoneNumber(phone, appVerifier)
       .then((result) => {
-        // prompt user to type the code from the message
         setconfirmationResult(result);
         alert('Code sent!');
       })
@@ -90,6 +113,7 @@ function SignIn({ setIsLoggedIn }) {
         <p className="sign-in-header">Sign In</p>
       <TextField
         value={phone}
+        // populate usestate. updates every time user types
         onChange={(e) => setPhone(e.target.value)}
         placeholder="+1234567890"
       />
@@ -119,33 +143,40 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div>
-    {!isLoggedIn ? ( <SignIn setIsLoggedIn={setIsLoggedIn}/>) : ( 
-    <>
-    <NavBar />
-    <div className="App">
-      
-      <div className="leftside">
-        {data.map(data => (
-          <div className="boink" key={data.name}>
-            <a href={data.img}>
-            <img src = {data.img} alt='offender' className="leftside-image"></img>
-            </a>
-            <p className="frontpage-name">{data.name}</p>
-            <p>{data.address}</p>
-            <p>{data.locality}</p>
-          </div>
-          
-        ))}
-      </div>
-    
-    <MapAccess />
-      
-    </div>
-    </>
-    )}
-    </div>
-  
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/track" element={<TrackUser />} />
+        <Route
+          path="*"
+          element={
+            <>
+              
+              <div className="App">
+                <div className="leftside">
+                  {data.map((data) => (
+                    <div className="boink" key={data.name}>
+                      <a href={data.img}>
+                        <img
+                          src={data.img}
+                          alt="offender"
+                          className="leftside-image"
+                        />
+                      </a>
+                      <p className="frontpage-name">{data.name}</p>
+                      <p>{data.address}</p>
+                      <p>{data.locality}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <MapAccess />
+              </div>
+            </>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 const root = createRoot(document.getElementById('root'));
