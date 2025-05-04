@@ -19,19 +19,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { firebaseConfig } from "./firebaseConfig"; 
 
-
-
-if (!firebase.apps.length) {
-firebase.initializeApp({
-  apiKey: "AIzaSyBCwjalynLRr1J2C9gqf33aOuPUuN2xgaw",
-  authDomain: "knoxville-watchdog.firebaseapp.com",
-  projectId: "knoxville-watchdog",
-  storageBucket: "knoxville-watchdog.firebasestorage.app",
-  messagingSenderId: "970872123649",
-  appId: "1:970872123649:web:46cb9ba37ee6228f646b00",
-  measurementId: "G-CDLJ0PH3XE"
-});
+if(!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
 }
 
 function SignIn({ setIsLoggedIn }) {

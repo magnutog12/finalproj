@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Data from './data.json'
 import './App.css';
 import React, { useState } from "react";
-
+import TrackUser from './Pages/trackUser';
 
 // this ended up being navbar and searching funtionallity
 function NavBar() {
