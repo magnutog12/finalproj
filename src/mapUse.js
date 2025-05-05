@@ -1,5 +1,5 @@
 // Map.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Marker, Map, InfoWindow, APIProvider, useMapsLibrary, useMap } from '@vis.gl/react-google-maps';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -9,6 +9,7 @@ export default function MapAccess() {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [mPosition, setMPosition] = useState(null);
   const [selectedM, setSelectedM] = useState(null);
+  const alertedRef = useRef(new Set());
 
   //const [geocodingService, setgeocodingService] = useState(null);
   //const [offenderMarker, setOffenderMarker] = useState([]);
@@ -66,6 +67,18 @@ export default function MapAccess() {
     gestureHandling: 'greedy'
   };
 
+  function getDistance(lat1, lng1, lat2, lng2) {
+    const toRad = (v) => (v * Math.PI) / 180;
+    const R = 6371000; // Earth radius in meters
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+
   useEffect(() => {
     const requestLocation = () => {
       if (navigator.geolocation) { // LOOK INTO NAVIGATOR GEOPOSITION
@@ -81,6 +94,19 @@ export default function MapAccess() {
             setCurrentLocation(location);
             setMPosition(location);
             setSelectedM(location);
+            /* testing alert code*/
+            coords.forEach((offender) => {
+              const dist = getDistance(
+                location.lat,
+                location.lng,
+                offender.lat,
+                offender.lng
+              );
+              if (dist <= 1000 && !alertedRef.current.has(offender.name)) {
+                alert(`Warning! Sexual Offender Spotted! You are within ${Math.round(dist)}m of ${offender.name}`);
+                alertedRef.current.add(offender.name);
+              }
+            });
           },
         //  Error handling guide
         //  https://www.w3schools.com/html/html5_geolocation.asp
