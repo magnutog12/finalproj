@@ -52,8 +52,10 @@ const TrackUser = () => {
 
   return (
     <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-    <div className="track-user">
+    <div className="track-user ms-3">
+      
       <h2>Track User</h2>
+      <p></p>
       <input
         type="text"
         placeholder="+1234567890"
