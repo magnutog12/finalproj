@@ -7,6 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Data from './data.json'
 import './App.css';
 import React, { useState } from "react";
+import TrackUser from './Pages/trackUser';
 
 // this ended up being navbar and searching funtionallity
 function NavBar() {
@@ -45,7 +46,10 @@ function NavBar() {
 
     {/*this is the actual navbar part*/}
     <Navbar className="bg-body-tertiary justify-content-between navbar-fixed-top">
-      <Button className='navbar-brand' variant='light' href='index.html'>Home</Button>    
+    <div className="d-flex align-items-center">
+      <Button className="navbar-brand me-2" variant="light" href="index.html">Home</Button>
+      <Button className="navbar-brand" variant="light" href="/track">Track</Button>
+    </div>
       <Form className="d-flex">
       
       </Form>
