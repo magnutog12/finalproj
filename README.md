@@ -1,6 +1,6 @@
 # Overview:
 Knoxville Watchdog pushes for increased public safety in our community and for 
-us all to be aware of potential and known dangerous people who may be our neighbors. Complete with tracking functionallity and Google Maps display.
+us all to be aware of potential and known dangerous people who may be our neighbors. Complete with tracking functionallity, proximity alerts, search query, and Google Maps display.
 
 # Usage:
 As of now, verification is an example because real phone number verification is only included in paid packages on Firebase. Example info for testing provided below.
