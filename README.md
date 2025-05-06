@@ -15,7 +15,8 @@ As of now, verification is an example because real phone number verification is 
  +19011234567 
  
 # timesheet - Tony 
-Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4 - 8 hours 4/08/2025 - Debugging Maps.jx, npm install deprecations, and node.js conflictions, Map functionality and geolocation request functional.
+Tony - 6 hours 03/19/2025 - Learning Javascript watched video and created files done in video - https://www.youtube.com/watch?v=lfmg-EJ8gm4m, 8 hours 4/08/2025 - Debugging Maps.jx, npm install deprecations, and node.js conflictions, Map functionality and geolocation request functional, 10 hours - 4/23/2025 - Researched cluster markers to replace current markers, reducing loading time, setting up hosting on firebase, dowloading NPM packages and debugging issues with firebase hosting deployment, 2 hours - 4/28/25 - Group Meeting, 5/02/2025 - 5 hours - Added in alerts based on proximity to user.
+TOTAL HOURS: 31
 
 # timesheet - Magnus
 Magnus - 3 hours  3/19/2025 learning react use states and react-bootstrap, 5 hours 3/10/2025 - 3/19/2025 working on webscraper to get data to json, 6 hours 3/19/2025 - 3/20/2025 on UI of site + search bar functionality. 
