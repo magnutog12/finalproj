@@ -5,7 +5,7 @@ Knoxville Watchdog pushes for increased public safety in our community and for u
 
 # Usage:
 To run locally, 
-# 1:
+# 
 npx create-react-app my-app
 cd my-app
 npm start
