@@ -9,13 +9,13 @@ To run locally,
 npx create-react-app my-app
 cd my-app
 npm start
-# 2:
+# 
 Install dependencies found in package.json (npm install)
-# 3:
+# 
 Configure Google Maps API. Generate key and place in mapUse.js
-# 4:
+# 
 Firebase Phone Authentication (optional). Create Firebase project and enable phone auth, place Firebase key in App.js
-# OR:
+# 
 Visit https://knoxville-watchdog.web.app/ to test!
 
 As of now, verification is an example because real phone number verification is only included in paid packages on Firebase. Example info for testing provided below.
